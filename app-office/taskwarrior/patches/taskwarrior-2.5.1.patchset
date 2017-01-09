@@ -1,0 +1,33 @@
+From 3a0e0be051c263c48f3c160bf2db9aaa731373af Mon Sep 17 00:00:00 2001
+From: jrabbit <jackjrabbit@gmail.com>
+Date: Mon, 9 Jan 2017 13:59:07 -0500
+Subject: define bsd source to fix timegm import
+
+
+diff --git a/src/ISO8601.cpp b/src/ISO8601.cpp
+index bf32826..1899bd3 100644
+--- a/src/ISO8601.cpp
++++ b/src/ISO8601.cpp
+@@ -25,6 +25,7 @@
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+ #include <cmake.h>
++#define _BSD_SOURCE
+ #include <ISO8601.h>
+ #include <sstream>
+ #include <iomanip>
+diff --git a/src/ISO8601.h b/src/ISO8601.h
+index c7b7cd0..ef7ed62 100644
+--- a/src/ISO8601.h
++++ b/src/ISO8601.h
+@@ -28,6 +28,7 @@
+ #define INCLUDED_ISO8601
+ 
+ #include <Nibbler.h>
++#define _BSD_SOURCE
+ #include <time.h>
+ 
+ // Date
+-- 
+2.2.2
+
